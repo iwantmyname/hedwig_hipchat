@@ -1,7 +1,7 @@
 defmodule HedwigHipChat.Mixfile do
   use Mix.Project
 
-  @version "0.9.5"
+  @version "0.9.6"
   @source_url "https://github.com/jwarlander/hedwig_hipchat"
 
   def project do
@@ -9,7 +9,7 @@ defmodule HedwigHipChat.Mixfile do
      name: "Hedwig HipChat",
      source_url: @source_url,
      version: @version,
-     elixir: "~> 1.1",
+     elixir: "~> 1.3",
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
      package: package,
@@ -23,8 +23,9 @@ defmodule HedwigHipChat.Mixfile do
   end
 
   defp deps do
-    [{:hedwig, "1.0.0-rc.4"},
-     {:romeo, "~> 0.6"},
+    [{:hedwig, "~> 1.0"},
+     {:romeo, "~> 0.7"},
+     {:fast_xml, github: "iwantmyname/fast_xml", override: :true},
      {:earmark, "~> 0.1", only: :dev},
      {:ex_doc, "~> 0.11", only: :dev}]
   end
